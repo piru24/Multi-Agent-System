@@ -19,9 +19,12 @@ def extract_study_info(text: str) -> dict:
         if word.isdigit():
             days = int(word)
 
+    subjects_list = ["Math", "IT"]
+
     weak = None
-    if "weak in math" in text:
-        weak = "Math"
+    for subject in subjects_list:
+        if f"weak in {subject.lower()}" in text:
+            weak = subject
 
     return {
         "subjects": subjects,

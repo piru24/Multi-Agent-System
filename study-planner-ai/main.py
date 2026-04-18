@@ -1,7 +1,17 @@
 from tools.input_tool import extract_study_info
+from agents.priority_agent import priority_agent
 
-user_input = "I have Math and IT exam in 5 days, weak in Math"
+# take user input
+user_input = input("Enter your study details: ")
 
-result = extract_study_info.run(user_input)
+# Step 1 – Input Agent
+data = extract_study_info.run(user_input)
 
-print(result)
+# Step 2 – Priority Agent
+priority = priority_agent.run(data)
+
+print("\nExtracted Data:")
+print(data)
+
+print("\nPriority:")
+print(priority)
