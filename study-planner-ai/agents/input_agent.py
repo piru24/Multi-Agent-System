@@ -4,8 +4,7 @@ from tools.input_tool import extract_study_info
 
 class InputAgent(Agent):
     def run(self, input_text):
-        # 🔥 directly use tool
-        return extract_study_info(input_text)
+        return extract_study_info.run(input_text)  # ✅ FIXED
 
 input_agent = InputAgent(
     role="Input Analyzer",
